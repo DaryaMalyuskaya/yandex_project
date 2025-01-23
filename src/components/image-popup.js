@@ -1,0 +1,1 @@
+export const imagePopup = document.querySelector('.popup.popup_type_image')

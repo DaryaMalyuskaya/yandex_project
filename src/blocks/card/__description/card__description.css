@@ -1,0 +1,8 @@
+.card__description {
+    display: grid;
+    grid-template-areas: "a b" "a c";
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    background: #fff;
+    padding: 25px 20px;
+}
