@@ -24,5 +24,7 @@ cardAddForm.addEventListener('submit', async e => {
         alert(e)
     } finally {
         cardPopupSubmitButton.textContent = 'Сохранить'
+        cardPopup.querySelector('.popup__input_type_card-name').value = ''
+        cardPopup.querySelector('.popup__input_type_url').value = ''
     }
 })

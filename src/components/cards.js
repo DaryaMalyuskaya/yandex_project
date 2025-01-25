@@ -25,17 +25,19 @@ function createCard(data) {
     const btn = card.querySelector('.card__like-button')
     btn.classList.toggle('card__like-button_is-active', liked)
 
-    btn.addEventListener('click', e => {
+    btn.addEventListener('click', async e => {
         liked = !liked
-        btn.classList.toggle('card__like-button_is-active', liked)
         try {
             if (liked) {
+
+                await apiAddCardLike(data._id)
                 card.querySelector('.card__like-count').textContent = ++likeCount
-                apiAddCardLike(data._id)
             } else {
+
+                await apiRemoveCardLike(data._id)
                 card.querySelector('.card__like-count').textContent = --likeCount
-                apiRemoveCardLike(data._id)
             }
+            btn.classList.toggle('card__like-button_is-active', liked)
         } catch (e) {
             alert(e)
         }
